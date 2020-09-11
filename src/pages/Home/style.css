@@ -2,9 +2,54 @@
     display: flex;
     justify-content: center;
     align-items: center;
+    align-content: center;
     flex-direction: column;
     height: 100vh;
-    width: 100%;
+    width: 98%;
+    max-width: 500px;
     overflow: hidden;
-    background-color: var(--color-primary);
+    margin: 0 auto;
+}
+
+.topinputs,
+.bottominputs {
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+}
+
+.box {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: var(--color-tertiary);
+    height: 24rem;
+    padding: 2rem;
+    margin: 2rem;
+}
+
+.box p {
+    font: 400 1.4rem Archivo;
+}
+
+#topleft {
+}
+
+#topright {
+}
+
+#bottomleft {
+}
+
+#bottomright {
+}
+
+input {
+    width: 4rem;
+    height: 2.6rem;
+    color: var(--color-secondary);
+}
+
+input:focus {
+    color: var(--color-secondary-dark);
 }

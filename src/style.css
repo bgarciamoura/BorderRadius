@@ -4,8 +4,8 @@
     --color-primary-light: #251a4c;
     --color-primary-dark: #1d1344;
     --color-secondary: #2374ab;
-    --color-secondary-light: #2d719f;
-    --color-secondary-dark: #90ffe7;
+    --color-secondary-dark: #2d719f;
+    --color-secondary-light: #90ffe7;
     --color-tertiary: #ff8484;
     --color-tertiary-light: #f68e8e;
     --color-tertiary-dark: #ff4a4a;
@@ -30,5 +30,8 @@ input,
 button,
 textarea {
     font: 500 1.6rem Archivo;
-    color: var(--color-text);
+}
+
+body {
+    background-color: var(--color-primary);
 }
