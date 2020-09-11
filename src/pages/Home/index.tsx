@@ -9,34 +9,35 @@ const App = () => {
     const [blBorder, setBlBorder] = useState(0);
     const [brBorder, setBrBorder] = useState(0);
 
-    function handleOnChangeTopLeft(event: ChangeEvent<HTMLInputElement>) {
-        console.log(event.target);
-        const { value } = event.target;
-        setTlBorder(parseInt(value));
-    }
+    function handleChangeInputValue(event: ChangeEvent<HTMLInputElement>) {
+        const { id, value } = event.currentTarget;
+        switch (id) {
+            case 'topleft':
+                setTlBorder(parseInt(value));
+                break;
+            case 'topright':
+                setTrBorder(parseInt(value));
+                break;
+            case 'bottomleft':
+                setBlBorder(parseInt(value));
+                break;
+            case 'bottomright':
+                setBrBorder(parseInt(value));
+                break;
 
-    function handleOnChangeTopRight(event: ChangeEvent<HTMLInputElement>) {
-        const { value } = event.target;
-        setTrBorder(parseInt(value));
-    }
-
-    function handleOnChangeBottomLeft(event: ChangeEvent<HTMLInputElement>) {
-        const { value } = event.target;
-        setBlBorder(parseInt(value));
-    }
-
-    function handleOnChangeBottomRight(event: ChangeEvent<HTMLInputElement>) {
-        const { value } = event.target;
-        setBrBorder(parseInt(value));
+            default:
+                break;
+        }
     }
 
     function handleNumberChange(event: ChangeEvent<HTMLInputElement>) {
-        const regex = /^(\s*|[0-1]+)$/;
+        const regex = /\d+/g;
         const value = event.target.value;
-        if (value.length > 16 || !regex.test(value)) {
-            alert('Only binary numbers allowed. [0-1]');
+        if (value.length >= 4 || !regex.test(value)) {
+            swal('Only numbers with length less than 4 allowed.');
             return;
         }
+        handleChangeInputValue(event);
     }
 
     function handleBoxClick(event: MouseEvent<HTMLParagraphElement>) {
@@ -57,14 +58,14 @@ const App = () => {
                     name="topleft"
                     id="topleft"
                     value={tlBorder}
-                    onChange={handleOnChangeTopLeft}
+                    onChange={handleNumberChange}
                 />
                 <input
                     type="text"
                     name="topright"
                     id="topright"
                     value={trBorder}
-                    onChange={handleOnChangeTopRight}
+                    onChange={handleNumberChange}
                 />
             </div>
 
@@ -94,14 +95,14 @@ const App = () => {
                     name="bottomleft"
                     id="bottomleft"
                     value={blBorder}
-                    onChange={handleOnChangeBottomLeft}
+                    onChange={handleNumberChange}
                 />
                 <input
                     type="text"
                     name="bottomright"
                     id="bottomright"
                     value={brBorder}
-                    onChange={handleOnChangeBottomRight}
+                    onChange={handleNumberChange}
                 />
             </div>
         </div>
