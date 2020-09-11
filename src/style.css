@@ -22,6 +22,7 @@
     padding: 0;
     box-sizing: border-box;
     font: 500 1.6rem Roboto;
+    color: var(--text);
 }
 
 body,
