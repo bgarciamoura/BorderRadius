@@ -1,0 +1,33 @@
+:root {
+    font-size: 60%;
+    --color-primary: #231651;
+    --color-primary-light: #251a4c;
+    --color-primary-dark: #1d1344;
+    --color-secondary: #2374ab;
+    --color-secondary-light: #2d719f;
+    --color-secondary-dark: #90ffe7;
+    --color-tertiary: #ff8484;
+    --color-tertiary-light: #f68e8e;
+    --color-tertiary-dark: #ff4a4a;
+    --text: #d6fff6;
+    --text-light: #d9fcf4;
+    --text-dark: #90ffe7;
+}
+
+* {
+    /* font-family: 'Archivo', sans-serif; */
+    /* font-family: 'Baloo Tamma 2', cursive; */
+    /* font-family: 'Roboto', sans-serif; */
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font: 500 1.6rem Roboto;
+}
+
+body,
+input,
+button,
+textarea {
+    font: 500 1.6rem Archivo;
+    color: var(--color-text);
+}
